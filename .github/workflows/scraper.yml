@@ -1,7 +1,6 @@
 name: My first Action
 
 on:
-  push:
   workflow_dispatch:
   schedule:
     - cron: '* * * * *'
