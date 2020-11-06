@@ -1,0 +1,21 @@
+name: My first Action
+
+on:
+  push:
+  schedule:
+    - cron: '1 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out master
+        uses: actions/checkout@master
+      - name: fetch data
+        run: curl https://www.fire.ca.gov/umbraco/Api/IncidentApi/GetIncidents >> incident.json
+      - name: push and commit
+        run: |
+          git add -A
+          time=$(date)
+          git commit -m 'Latest Version: ${time}'
+          git push
