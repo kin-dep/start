@@ -19,5 +19,5 @@ jobs:
           git config --global user.name "kin-dep"
           git add -A
           time=$(date)
-          git commit -m 'Latest Version: ${time}'
+          git commit -m "Latest Version: ${time}"
           git push
