@@ -15,6 +15,8 @@ jobs:
         run: curl https://www.fire.ca.gov/umbraco/Api/IncidentApi/GetIncidents >> incident.json
       - name: push and commit
         run: |
+          git config --global user.email "1102537075@qq.com"
+          git config --global user.name "kin-dep"
           git add -A
           time=$(date)
           git commit -m 'Latest Version: ${time}'
